@@ -1,0 +1,38 @@
+# Projeto Biblioteca
+
+Este projeto consiste na criação de um banco de dados para gerenciar uma biblioteca fictícia. O banco de dados armazena informações sobre autores, livros e empréstimos realizados.
+
+## Estrutura do Banco de Dados
+
+O banco de dados é composto por três tabelas principais:
+
+1. **Autores**: Armazena informações sobre os autores dos livros.
+    - **AutorID**: Identificador único do autor.
+    - **Nome**: Nome do autor.
+    - **Nacionalidade**: Nacionalidade do autor.
+
+2. **Livros**: Armazena informações sobre os livros disponíveis na biblioteca.
+    - **LivroID**: Identificador único do livro.
+    - **Titulo**: Título do livro.
+    - **AutorID**: Identificador do autor, referenciando a tabela `Autores`.
+    - **AnoPublicacao**: Ano de publicação do livro.
+    - **Genero**: Gênero do livro.
+
+3. **Empréstimos**: Armazena informações sobre os empréstimos realizados.
+    - **EmprestimoID**: Identificador único do empréstimo.
+    - **LivroID**: Identificador do livro emprestado, referenciando a tabela `Livros`.
+    - **DataEmprestimo**: Data em que o livro foi emprestado.
+    - **DataDevolucao**: Data em que o livro foi devolvido.
+    - **NomeUsuario**: Nome do usuário que realizou o empréstimo.
+
+## Instruções de Uso
+
+### 1. Criação do Banco de Dados
+
+O script inicia com a criação do banco de dados `Biblioteca` e seleciona o banco para uso:
+
+```sql
+DROP DATABASE IF EXISTS Biblioteca;
+SET SQL_SAFE_UPDATES = 0;
+CREATE DATABASE Biblioteca;
+USE Biblioteca;
